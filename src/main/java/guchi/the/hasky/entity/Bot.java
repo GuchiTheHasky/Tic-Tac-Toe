@@ -93,7 +93,7 @@ public class Bot {
 
         return point;
     }
-    public Point possibleWinMove(Point[] points, Field field){
+    public Point possibleWinMove(Point[] points){ ////
         int index = (int) (Math.random() * points.length);
         return points[index];
     }
@@ -190,7 +190,7 @@ public class Bot {
         }
         else if (possibleWinMoves(field).length > 0){
 
-           return possibleWinMove(possibleWinMoves(field), field);
+           return possibleWinMove(possibleWinMoves(field)); ////
         }
         else {
             return rndMove(field);

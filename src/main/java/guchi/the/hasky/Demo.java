@@ -22,7 +22,11 @@ public class Demo {
             int choice = 0;
             do {
                 game.printMenu();
-                choice = Integer.parseInt(reader.readLine());
+                try {
+                    choice = Integer.parseInt(reader.readLine());
+                } catch (NumberFormatException | IOException e) {
+                    System.out.println("Numbers only");;
+                }
                 if (choice < 1 || choice > 5) error();
             }
             while (choice < 1 || choice > 5);
@@ -37,8 +41,12 @@ public class Demo {
                             < 2 > - "O"
                             < 3 > - Random choose.
                             """);
-
-                    int temp = Integer.parseInt(reader.readLine());
+                    int temp = 0;
+                    try {
+                        temp = Integer.parseInt(reader.readLine());
+                    } catch (NumberFormatException | IOException e) {
+                        System.out.println("Numbers only");;
+                    }
 
                     if (!game.settings(temp)) error();
                     else {

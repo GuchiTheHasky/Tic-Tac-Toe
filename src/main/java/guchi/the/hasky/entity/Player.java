@@ -45,7 +45,7 @@ public class Player {
         System.out.println(name + " " + symbol + " step.");
     }
     private boolean isValidCoordinate(int coordinate){
-        return coordinate < 0 || coordinate > 2;
+        return (coordinate < 0 || coordinate > 2);
     }
     public void doMove(Field field, BufferedReader reader) throws IOException {
         System.out.println("Input first coordinate:");
@@ -54,7 +54,12 @@ public class Player {
         int y = 0;
         do {
             do {
-                x = Integer.parseInt(reader.readLine());
+                try {
+                    x = Integer.parseInt(reader.readLine());
+                }
+                catch (NumberFormatException e) {
+                    System.out.println("Numbers only");;
+                }
                 if ((isValidCoordinate(x))) {
                     System.out.println("Error, wrong number.");
                 }
@@ -63,7 +68,12 @@ public class Player {
             System.out.println("Input second coordinate:");
 
             do {
-                y = Integer.parseInt(reader.readLine());
+                try {
+                    y = Integer.parseInt(reader.readLine());
+                }
+                catch (NumberFormatException e) {
+                    System.out.println("Numbers only");;
+                }
                 if ((isValidCoordinate(y))) {
                     System.out.println("Error, wrong number.");
                 }

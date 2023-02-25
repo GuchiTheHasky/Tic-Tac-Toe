@@ -3,8 +3,6 @@ package guchi.the.hasky.game;
 import guchi.the.hasky.entity.Bot;
 import guchi.the.hasky.entity.Player;
 import guchi.the.hasky.field.Field;
-
-import java.awt.desktop.SystemSleepListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
